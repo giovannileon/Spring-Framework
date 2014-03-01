@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "struts-config_1_2.dtd" >
+<struts-config>
+
+	<form-beans>
+
+		<form-bean name="dynaForm" type="org.apache.struts.action.DynaActionForm"
+			dynamic="true">
+			<form-property name="persona"
+				type="mx.com.gm.capadatos.domain.Persona" />
+			<form-property name="usuario"
+				type="mx.com.gm.capadatos.domain.Usuario" />
+		</form-bean>
+
+	</form-beans>
+
+	<global-forwards>
+		<forward name="personas" path="/personas.do" />
+		<forward name="listarPersonas" path="/personas.do" />
+		<forward name="usuarios" path="/usuarios.do" />
+		<forward name="listarUsuarios" path="/usuarios.do" />
+	</global-forwards>
+
+	<action-mappings>
+		
+		<!-- LOGIN -->		
+						
+		<action name="dynaForm" parameter="metodo" path="/login"
+			scope="request" type="org.springframework.web.struts.DelegatingActionProxy"	
+			validate="false">
+			<forward name="acceso" path="/WEB-INF/pages/main.jsp"></forward>
+			<forward name="login" path="/WEB-INF/pages/login.jsp"/>
+			<forward name="salir" path="/index.html"/>
+		</action>
+
+		<!-- PERSONAS -->
+		<action parameter="metodo" path="/personas"
+			type="org.springframework.web.struts.DelegatingActionProxy" 
+			validate="false">
+			<forward name="listarPersonas" path="/WEB-INF/pages/listarPersonas.jsp" />
+			<forward name="loginUsuario" path="/WEB-INF/pages/login.jsp"/>
+		</action>
+
+		<action name="dynaForm" parameter="metodo" path="/detallePersona"
+			scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="true">
+			<forward name="editarPersona" path="/WEB-INF/pages/detallePersona.jsp" />
+		</action>
+
+		<action name="dynaForm" parameter="metodo" path="/guardarPersona"
+			scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="true">
+		</action>
+
+		<!-- USUARIOS -->
+		<action parameter="metodo" path="/usuarios"
+			type="org.springframework.web.struts.DelegatingActionProxy" 
+			validate="true">
+			<forward name="listarUsuarios" path="/WEB-INF/pages/listarUsuarios.jsp" />
+			<!-- <forward name="editarUsuario" path="/WEB-INF/pages/detalleUsuario.jsp" /> -->					
+		</action>
+
+		<action name="dynaForm" parameter="metodo" path="/detalleUsuario"
+			scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="true">
+			<forward name="editarUsuario" path="/WEB-INF/pages/detalleUsuario.jsp" />
+		</action>
+
+		<action name="dynaForm" parameter="metodo" path="/guardarUsuario"
+			scope="request" type="org.springframework.web.struts.DelegatingActionProxy"
+			validate="true">
+		</action>
+
+	</action-mappings>
+
+	<message-resources parameter="mensajes" />
+
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/classes/applicationContext.xml,/WEB-INF/classes/datasource-test.xml" />
+	</plug-in>
+
+</struts-config>

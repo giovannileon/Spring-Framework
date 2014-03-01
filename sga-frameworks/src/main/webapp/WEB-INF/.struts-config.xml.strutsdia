@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM NAME="page0" PATH="/WEB-INF/pages/listarPersonas.jsp"
+  SHAPE="240,34,0,0" SUBTYPE="jsp" TITLE="listarPersonas.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="personas" NAME="forward0" PATH="/personas.do"
+  SHAPE="48,129,0,0" TARGET="action7" TITLE="personas" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="listarPersonas" NAME="forward1" PATH="/personas.do"
+  SHAPE="48,241,0,0" TARGET="action7" TITLE="listarPersonas"
+  TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page1" PATH="/WEB-INF/pages/detallePersona.jsp"
+  SHAPE="240,370,0,0" SUBTYPE="jsp" TITLE="detallePersona.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/guardarPersona.do"
+   SUBTYPE="confirmed" TARGET="action2" TITLE="/guardarPersona.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page2" PATH="/WEB-INF/pages/listarUsuarios.jsp"
+  SHAPE="256,577,0,0" SUBTYPE="jsp" TITLE="listarUsuarios.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#usuarios" NAME="action3" PATH="/usuarios"
+  SHAPE="32,577,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listarUsuarios" NAME="forward0"
+   PATH="/WEB-INF/pages/listarUsuarios.jsp" TARGET="page2"
+   TITLE="listarUsuarios" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page3" PATH="/WEB-INF/pages/detalleUsuario.jsp"
+  SHAPE="240,706,0,0" SUBTYPE="jsp" TITLE="detalleUsuario.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/guardarUsuario.do"
+   SUBTYPE="confirmed" TARGET="action5" TITLE="/guardarUsuario.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#guardarUsuario" NAME="action5"
+  PATH="/guardarUsuario" SHAPE="448,689,0,0" TITLE="dynaForm"
+  TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#personas" NAME="action7" PATH="/personas"
+  SHAPE="32,17,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listarPersonas" NAME="forward0"
+   PATH="/WEB-INF/pages/listarPersonas.jsp" TARGET="page0"
+   TITLE="listarPersonas" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="loginUsuario" NAME="forward1"
+   PATH="/WEB-INF/pages/login.jsp" TARGET="page5" TITLE="loginUsuario"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="usuarios" NAME="forward2" PATH="/usuarios.do"
+  SHAPE="48,801,0,0" TARGET="action3" TITLE="usuarios" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="listarUsuarios" NAME="forward3" PATH="/usuarios.do"
+  SHAPE="48,913,0,0" TARGET="action3" TITLE="listarUsuarios"
+  TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#detallePersona" NAME="action0"
+  PATH="/detallePersona" SHAPE="48,353,0,0" TITLE="dynaForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="editarPersona" NAME="forward0"
+   PATH="/WEB-INF/pages/detallePersona.jsp" TARGET="page1"
+   TITLE="editarPersona" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#guardarPersona" NAME="action2"
+  PATH="/guardarPersona" SHAPE="32,1025,0,0" TITLE="dynaForm"
+  TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page4" PATH="/WEB-INF/pages/main.jsp"
+  SHAPE="240,818,0,0" SUBTYPE="jsp" TITLE="main.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page5" PATH="/WEB-INF/pages/login.jsp"
+  SHAPE="448,577,0,0" SUBTYPE="jsp" TITLE="login.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/login.do" SUBTYPE="confirmed"
+   TARGET="action6" TITLE="/login.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#login" NAME="action6" PATH="/login"
+  SHAPE="272,513,0,0" TITLE="dynaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="acceso" NAME="forward0"
+   PATH="/WEB-INF/pages/main.jsp" TARGET="page4" TITLE="acceso"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="login" NAME="forward1"
+   PATH="/WEB-INF/pages/login.jsp" TARGET="page5" TITLE="login"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="salir" NAME="forward2" PATH="/index.html"
+   TARGET="page7" TITLE="salir" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page7" PATH="/index.html" SHAPE="688,513,0,0"
+  SUBTYPE="html" TITLE="index.html" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#detalleUsuario" NAME="action1"
+  PATH="/detalleUsuario" SHAPE="48,1265,0,0" TITLE="dynaForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="editarUsuario" NAME="forward0"
+   PATH="/WEB-INF/pages/detalleUsuario.jsp" TARGET="page3"
+   TITLE="editarUsuario" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+</PROCESS>
